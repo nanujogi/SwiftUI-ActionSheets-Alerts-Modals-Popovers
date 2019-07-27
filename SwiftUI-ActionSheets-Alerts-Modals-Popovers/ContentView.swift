@@ -13,8 +13,6 @@ struct ContentView: View {
     
     @State private var message: Message? = nil
     
-    @State private var showActionSheet = false
-    
     var body: some View {
         Group {
             NavigationView {
@@ -55,7 +53,6 @@ struct ModelView: View {
             Text("This is Modal view")
         }
     }
-    
 }
 
 // PopOverView
@@ -73,7 +70,6 @@ struct PopOverView: View {
                 Text("Popover")
             }
         }
-        
     }
 }
 
