@@ -1,7 +1,6 @@
 //  ContentView.swift
 //  SwiftUI-ActionSheets-Alerts-Modals-Popovers
 
-
 import SwiftUI
 
 struct ContentView: View {
@@ -14,8 +13,11 @@ struct ContentView: View {
     @State private var message: Message? = nil
     
     var body: some View {
-        Group {
-            NavigationView {
+        ZStack {
+            Color.clear
+            .background(self.backgroundGradient, cornerRadius: 0)
+            .edgesIgnoringSafeArea(.all)
+            // NavigationView {
                 VStack {
                     ActionSheetView()
                     Spacer()
@@ -31,9 +33,21 @@ struct ContentView: View {
                     Alert(title: Text(message.text), message: nil, dismissButton: .cancel())
                 }
              .navigationBarTitle("ActionSheets")
-            }
+            //}
         }
     }
+    
+    private var backgroundGradient: LinearGradient {
+        let gradient = Gradient(colors: [
+            Color(red: 241/255.0, green: 232/255.0, blue: 103/255.0),
+            Color(red: 254/255.0, green: 183/255.0, blue: 69/255.0)
+
+        ])
+        return LinearGradient(gradient: gradient,
+                              startPoint: .top,
+                              endPoint: .bottom)
+      }
+    
 }
 
 // Modals View
