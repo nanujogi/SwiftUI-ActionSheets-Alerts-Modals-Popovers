@@ -2,7 +2,4 @@
 **Majid's Blog** about Swift development
 for more information please visit https://mecid.github.io
 
-
-![Running the app](http://www.grenleaf.com/final-image.png)
-
-That's all.
+<img src="http://www.grenleaf.com/final-image.png" width="320">
