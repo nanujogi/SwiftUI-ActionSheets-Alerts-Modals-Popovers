@@ -1,5 +1,6 @@
 # SwiftUI-ActionSheets-Alerts-Modals-Popovers
 **Majid's Blog** about Swift development
 for more information please visit https://mecid.github.io
-
-<img src="http://www.grenleaf.com/final-image.png" width="320">
+<p align="center">
+  <img width="320" height="693" src="http://www.grenleaf.com/final-image.png">
+</p>
