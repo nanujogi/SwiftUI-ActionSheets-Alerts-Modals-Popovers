@@ -6,20 +6,24 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var showActionSheet = false
+    struct Message: Identifiable {
+        let id = UUID()
+        let text: String
+    }
     
+    @State private var message: Message? = nil
+    
+    @State private var showActionSheet = false
+   
     var body: some View {
         
         VStack {
             Button("Show action sheet") {
-                self.showActionSheet = true
+                self.message =  Message(text: "Hi!")
             }
             
-        }.actionSheet(isPresented: $showActionSheet) { ActionSheet(title: Text("Actions"), message: Text("Available actions"), buttons: [.cancel{
-            print(self.showActionSheet) },
-            .default(Text("Action")),
-            .destructive(Text("Delete"))
-            ])
+        }.alert(item: $message) { (message) -> Alert in
+            Alert(title: Text(message.text), message: nil, dismissButton: .cancel())
         }
     }
 }
